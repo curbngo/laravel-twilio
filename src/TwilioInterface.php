@@ -18,4 +18,11 @@ interface TwilioInterface
      * @return \Twilio\Rest\Api\V2010\Account\CallInstance
      */
     public function call($to, $message);
+
+    /**
+     * @param string $number
+     *
+     * @return \Twilio\Rest\Lookups\V1\PhoneNumberInstance
+     */
+    public function lookup($number);
 }

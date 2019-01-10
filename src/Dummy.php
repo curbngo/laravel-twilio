@@ -22,4 +22,13 @@ class Dummy implements TwilioInterface
     public function call($to, $message)
     {
     }
+
+    /**
+     * @param string $number
+     *
+     * @return \Twilio\Rest\Lookups\V1\PhoneNumberInstance
+     */
+    public function lookup($number)
+    {
+    }
 }

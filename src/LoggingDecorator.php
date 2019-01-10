@@ -50,4 +50,16 @@ class LoggingDecorator implements TwilioInterface
 
         return call_user_func_array([$this->wrapped, 'call'], func_get_args());
     }
+
+    /**
+     * @param string $number
+     *
+     * @return \Twilio\Rest\Lookups\V1\PhoneNumberInstance
+     */
+    public function lookup($number)
+    {
+        $this->logger->info(sprintf('Looking up %s', $number));
+
+        return call_user_func_array([$this->wrapped, 'lookup'], func_get_args());
+    }
 }

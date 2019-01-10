@@ -64,6 +64,16 @@ class Manager implements TwilioInterface
     }
 
     /**
+     * @param string $number
+     *
+     * @return \Twilio\Rest\Lookups\V1\PhoneNumberInstance
+     */
+    public function lookup($number)
+    {
+        return call_user_func_array([$this->defaultConnection(), 'lookup'], func_get_args());
+    }
+
+    /**
      * @return \Aloha\Twilio\TwilioInterface
      */
     public function defaultConnection()

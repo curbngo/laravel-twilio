@@ -99,6 +99,19 @@ class Twilio implements TwilioInterface
     }
 
     /**
+     * @param string $number
+     * @param array $params
+     *
+     * @link https://www.twilio.com/docs/lookup/api
+     *
+     * @return \Twilio\Rest\Lookups\V1\PhoneNumberInstance
+     */
+    public function lookup($number, array $params = [])
+    {
+        return $this->getTwilio()->lookups->v1->phoneNumbers($number)->fetch($params);
+    }
+
+    /**
      * @return \Twilio\Rest\Client
      */
     public function getTwilio()
